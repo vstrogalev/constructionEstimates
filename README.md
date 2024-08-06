@@ -1,4 +1,36 @@
-My alternative for CRA<br>
-Uses NodeJS verion 20.11.0<br><br>
-Edit `index.html` before development starts<br>
-Edit `robots.txt` if necessary
+# Тестовое задание от компании Seven Wings Studio
+Задача: реализовать страницу по шаблону фигма, где реактивным компонентом должна быть только таблица. Остальная часть реализуется без логики
+
+## Стек: TypeScript, React, SASS, react-table, Webpack
+
+Структура проекта:
+- src/ — исходные файлы проекта
+- src/components/ — папка с JS компонентами
+
+Важные файлы:
+
+## Установка и запуск
+Для установки и запуска проекта необходимо выполнить команды
+
+```
+npm install
+npm run start
+```
+
+или
+
+```
+yarn
+yarn start
+```
+## Сборка
+
+```
+npm run build
+```
+
+или
+
+```
+yarn build
+```
