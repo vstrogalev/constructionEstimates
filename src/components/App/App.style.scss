@@ -9,6 +9,12 @@ html, body {
   overflow: hidden; // Убирает полосы прокрутки
 }
 
+button {
+  color: inherit;
+  background-color: inherit;
+  border: none;
+}
+
 * {
   margin: 0;
   padding: 0;

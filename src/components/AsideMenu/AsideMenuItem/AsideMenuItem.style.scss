@@ -1,0 +1,11 @@
+.asideMenuItem {
+  display: flex;
+  width: 240px;
+  flex-direction: column;
+  gap: 28px;
+  justify-items: start;
+}
+
+.asideMenuItem_active {
+  color: var(--color-menu-active);
+}

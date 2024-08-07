@@ -1,12 +1,16 @@
 import { ReactElement } from "react";
 import style from "./Header.style.scss";
-import MenuButton from "../../assets/icons/menu_button.svg";
+import Menu from "../Menu/Menu";
+import MainMenuButton from "../MainMenuButton/MainMenuButton";
+import BackButton from "../BackButton/BackButton";
 
 function Header(): ReactElement {
   return (
-    <section className={style.constructionEstimates}>
-      <img src={MenuButton} />
-    </section>
+    <nav className={style.header}>
+      <MainMenuButton />
+      <BackButton />
+      <Menu />
+    </nav>
   );
 }
 

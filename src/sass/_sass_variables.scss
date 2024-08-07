@@ -8,15 +8,15 @@
 	--font-weigth-regular: 400;
 
 	// colors
-	--color-bg-inner: rgb(32, 33, 36);
-	--color-bg-outer: rgb(39, 39, 42);
-
 	--color-primary: rgb(255, 255, 255);
 	--color-secondary: rgb(161, 161, 170);
 
+	--color-bg-inner: rgb(32, 33, 36);
+	--color-bg-outer: rgb(39, 39, 42);
+		
 	--color-menu-inactive: var(--color-secondary);
 	--color-menu-active: var(--color-primary);
-	--color-header: var(--color-secondary);
+	--color-bg-aside-menu-active: var(--color-secondary);
 	--color-border: rgb(65, 65, 68);
 
 	--color-graph-node: rgb(120, 144, 178);
