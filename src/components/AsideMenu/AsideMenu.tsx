@@ -30,7 +30,7 @@ function AsideMenu(): ReactElement {
       {
         menuItems.map((menuItem, idx) => {
           const isActive = idx === menuItemActive;
-          return <AsideMenuItem isActive={isActive}>
+          return <AsideMenuItem key={menuItem} isActive={isActive}>
               {menuItem}
             </AsideMenuItem>
         }

@@ -9,7 +9,7 @@ html, body {
   overflow: hidden; // Убирает полосы прокрутки
 }
 
-button {
+button, td, th, tr {
   color: inherit;
   background-color: inherit;
   border: none;

@@ -11,7 +11,7 @@ function Menu(): ReactElement {
       {
         menuItems.map((menuItem, idx) => {
           const isActive = idx === menuItemActive;
-          return <button className={clsx(style.menu__item, {[style.menu__item_active]:isActive})}>{menuItem}</button>
+          return <button key={menuItem} className={clsx(style.menu__item, {[style.menu__item_active]:isActive})}>{menuItem}</button>
         }
         )
       }

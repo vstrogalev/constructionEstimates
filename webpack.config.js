@@ -14,6 +14,8 @@ const PATH_TEMPLATE_ENTRY = path.join(__dirname, "public", "index.html");
 const PATH_PUBLIC_FOLDER = path.join(__dirname, "public");
 const PATH_OUTPUT_FOLDER = path.join(__dirname, "build");
 
+const Dotenv = require('dotenv-webpack');
+
 module.exports = () => {
   const config = {
     mode: IS_DEVELOPMENT ? "development" : "production",
@@ -92,6 +94,7 @@ module.exports = () => {
           },
         ],
       }),
+      new Dotenv()
     ],
   };
 
