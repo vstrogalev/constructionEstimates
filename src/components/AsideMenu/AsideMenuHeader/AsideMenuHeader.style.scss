@@ -1,0 +1,28 @@
+.asideMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.asideMenuHeader__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.asideMenuHeader__title {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.asideMenuHeader__subtitle {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.asideMenuHeader__chevronDown {
+  color: var(--color-secondary);
+}

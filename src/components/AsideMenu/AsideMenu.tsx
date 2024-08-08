@@ -1,7 +1,8 @@
 import { ReactElement, useState } from "react";
-import clsx from 'clsx';
 import style from "./AsideMenu.style.scss";
 import AsideMenuItem from "./AsideMenuItem";
+import AsideMenuHeader from "./AsideMenuHeader";
+
 
 const menuItems = [
   'По проекту', 
@@ -22,13 +23,16 @@ const menuItems = [
 ]
 
 function AsideMenu(): ReactElement {
-  const [menuItemActive, setMenuItemActive] = useState<number>(0);
+  const [menuItemActive, setMenuItemActive] = useState<number>(4);
   return (
     <nav className={style.asideMenu}>
+      <AsideMenuHeader/>
       {
         menuItems.map((menuItem, idx) => {
           const isActive = idx === menuItemActive;
-          return <AsideMenuItem isActive={isActive}>{menuItem}</AsideMenuItem>
+          return <AsideMenuItem isActive={isActive}>
+              {menuItem}
+            </AsideMenuItem>
         }
         )
       }

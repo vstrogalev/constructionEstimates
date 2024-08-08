@@ -1,11 +1,20 @@
 .asideMenuItem {
   display: flex;
-  width: 240px;
-  flex-direction: column;
-  gap: 28px;
-  justify-items: start;
+  padding: 5px 20px;
+  align-items: center;
+  width: 100%;
 }
 
 .asideMenuItem_active {
   color: var(--color-menu-active);
+  background: var(--color-menu-inactive);
+}
+
+.asideMenuItem__icon {
+  width: 22px;
+  height: 22px;
+}
+
+.asideMenuItem__text {
+  margin-left: 14px;
 }

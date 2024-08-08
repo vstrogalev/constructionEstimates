@@ -2,14 +2,5 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 28px;
   justify-items: start;
-}
-
-.asideMenu__item {
-  color: var(--color-menu-inactive);
-}
-
-.asideMenu__item_active {
-  color: var(--color-menu-active);
 }
