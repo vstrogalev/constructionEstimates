@@ -1,9 +1,3 @@
-enum TypoOfNode {
-  root,
-  hasChild,
-  hasNoChild
-}
-
 export type ConstructionDataRow = {
   id: number;
   rowName: string;
@@ -21,16 +15,16 @@ export type ConstructionDataRow = {
 }
 export type ConstructionData = ConstructionDataRow[];
 
-export type ConstructionRowRender = Pick<ConstructionDataRow, "id" | "rowName" | "salary" | "equipmentCosts" | "overheads" | "estimatedProfit"> & {typeOfNode: TypoOfNode};
+export type ConstructionRowRender = Pick<ConstructionDataRow, "id" | "rowName" | "salary" | "equipmentCosts" | "overheads" | "estimatedProfit"> & {level: number; parentId: number | null};
 
 // id строки передаем в запросе, так что тут его нет
 export type ConstructionDataUpdateRequest = Omit<ConstructionDataRow, "id" | "total" | "child">;
 
 export type ConstructionDataCreateRequest = ConstructionDataUpdateRequest & {parentId: number | null}
 
-type ConstructionDataRowWOChild = Omit<ConstructionDataRow, "child">;
+export type ConstructionDataRowWOChild = Omit<ConstructionDataRow, "child">;
 
-export type ConstructionDataUpdatRespond = {
+export type ConstructionDataUpdatResponse = {
   current: ConstructionDataRowWOChild,
   changed: ConstructionDataRowWOChild[]
 }

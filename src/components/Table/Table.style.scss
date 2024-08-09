@@ -15,10 +15,10 @@
 }
 
 .table thead {
-
 }
 
-.table th, .table td {
+.table th,
+.table__column {
   color: var(--color-secondary);
   padding: 12px;
   text-align: left;
@@ -33,8 +33,11 @@
 
 .table tr {
   display: grid;
+  height: 60px;
   grid-template-columns: 110px 1fr repeat(4, 200px);
+  align-items: center;
   width: 100%; /* Убедимся, что строки занимают всю ширину таблицы */
+  border-bottom: 1px solid var(--color-border);
 }
 
 .table__title {
@@ -43,4 +46,66 @@
   font-weight: 400;
   padding: 12px 14px;
   border-bottom: 1px solid var(--color-border);
+}
+
+.table__input {
+  width: 100%;
+  color: var(--color-row-edit);
+  border: none;
+  border-radius: 6px;
+  background: var(--color-bg-row-edit);
+  outline: none;
+}
+
+.table_edit {
+  border: 1px solid var(--color-border);
+}
+
+.table__node {
+  position: relative;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  cursor: url('../../assets/icons/cursor_hand.svg') 6 6, auto;
+}
+
+.table__nodeIcon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  left: 8px;
+  z-index: 1;
+}
+
+.table__nodeIconDelete {
+  display: none;
+  margin-left: 8px;
+}
+
+.table__nodeIconDelete_forbidden {
+  visibility: hidden;
+}
+
+.table__nodeIconBg {
+  position: absolute;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3px 7px 3px 7px;
+  border-radius: 6px;
+  background: var(--color-bg-nodeIcon);
+  width: 54px;
+  height: 28px;
+  z-index: 0;
+  display: none;
+}
+
+.table__node:hover .table__nodeIconBg {
+  display: flex;
+}
+
+.table__node:hover .table__nodeIconDelete {
+  display: block;
 }
