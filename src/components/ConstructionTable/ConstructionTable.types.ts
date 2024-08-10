@@ -23,7 +23,11 @@ export type ConstructionRowRender = Pick<
   | "equipmentCosts"
   | "overheads"
   | "estimatedProfit"
-> & { level: number; parentId: number | null };
+> & { 
+      level: number; 
+      parentId: number | null;
+      children: number
+    };
 
 // id строки передаем в запросе, так что тут его нет
 export type ConstructionDataUpdateRequest = Omit<

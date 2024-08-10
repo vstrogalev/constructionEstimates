@@ -144,15 +144,16 @@ function Table(props: TableProps): ReactElement {
           <tbody>
             {props.data.map((row) => {
               const isEditing = editingRowId === row.id;
-              const childRows = props.data.filter(
-                (childRow) => childRow.parentId === row.id
-              );
-
+              
               let lengthLineToChildren = 0;
-              if (childRows.length > 0) {
+              if (row.children > 0) {
+                const childRows = props.data.filter(
+                  (childRow) => childRow.parentId === row.id
+                );
                 const descendants = countDescendants(props.data, row);
                 const lastChild = childRows[childRows.length-1];
                 const descendantsLastChild = countDescendants(props.data, lastChild);
+                
                 lengthLineToChildren = descendants - descendantsLastChild;
               }
 
@@ -175,7 +176,7 @@ function Table(props: TableProps): ReactElement {
                         )}
                       ></div>
                     )}
-                    {childRows.length > 0 && (
+                    {row.children > 0 && (
                       <div
                         className={clsx(
                           style.table__line,

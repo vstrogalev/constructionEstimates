@@ -52,6 +52,7 @@ function convertDataForRender(
       estimatedProfit,
       level,
       parentId: parent,
+      children: child.length
     };
 
     result.push(currentItem);
@@ -108,7 +109,7 @@ function deleteRow(data: ConstructionData, rowId: number): ConstructionData {
   return deleteRecursive(data);
 }
 
-// функция для добавления новой стоки как ребенка какого-то родителя
+// функция для добавления новой строки как ребенка какого-то родителя
 function addNewRowToParent(
   data: ConstructionData,
   newRow: ConstructionRowRender
@@ -186,6 +187,7 @@ function ConstructionTable(): ReactElement {
             estimatedProfit: 0,
             level: 1,
             parentId: null,
+            children: 0
           });
         } else {
           setDataFromAPI(dataFromServer);
@@ -230,6 +232,7 @@ function ConstructionTable(): ReactElement {
           ...current,
           parentId: newRow.parentId,
           level: newRow.level,
+          children: 0
         });
       }
 
@@ -280,6 +283,7 @@ function ConstructionTable(): ReactElement {
           estimatedProfit: 0,
           level: 1,
           parentId: null,
+          children: 0
         });
       }
     } catch (err) {
