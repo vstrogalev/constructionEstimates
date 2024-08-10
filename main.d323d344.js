@@ -38779,6 +38779,59 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/common/_constants.ts":
+/*!**********************************!*\
+  !*** ./src/common/_constants.ts ***!
+  \**********************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   REACT_APP_CONSTRUCTION_COSTS_API_URL: () => (/* binding */ REACT_APP_CONSTRUCTION_COSTS_API_URL),
+/* harmony export */   REACT_APP_ENTITY_ID_API: () => (/* binding */ REACT_APP_ENTITY_ID_API)
+/* harmony export */ });
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+const REACT_APP_ENTITY_ID_API = '135123'; // ID, полученный по API {{baseUrl}}/v1/outlay-rows/entity/create
+const REACT_APP_CONSTRUCTION_COSTS_API_URL = 'http://185.244.172.108:8081/v1/outlay-rows/entity';
+
+
+const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		let errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		let testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
 /***/ "./src/common/utils/formatNumber.ts":
 /*!******************************************!*\
   !*** ./src/common/utils/formatNumber.ts ***!
@@ -39346,6 +39399,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getConstructionCostsListAPI: () => (/* binding */ getConstructionCostsListAPI),
 /* harmony export */   updateConstructionCostAPI: () => (/* binding */ updateConstructionCostAPI)
 /* harmony export */ });
+/* harmony import */ var _common_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common/_constants */ "./src/common/_constants.ts");
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 /* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
@@ -39359,8 +39413,9 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const URL = "http://185.244.172.108:8081/v1/outlay-rows/entity";
-const ENTITY_ID_API = "135123";
+
+const URL = _common_constants__WEBPACK_IMPORTED_MODULE_0__.REACT_APP_CONSTRUCTION_COSTS_API_URL;
+const ENTITY_ID_API = _common_constants__WEBPACK_IMPORTED_MODULE_0__.REACT_APP_ENTITY_ID_API;
 if (!URL || !ENTITY_ID_API) {
     console.error("Environment variables are not defined properly:", {
         URL,
@@ -47285,7 +47340,7 @@ function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else i
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("1d2d07b5cb73119a0e1a")
+/******/ 		__webpack_require__.h = () => ("d323d3449200199734bf")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -48479,4 +48534,4 @@ function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else i
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.1d2d07b5.js.map
+//# sourceMappingURL=main.d323d344.js.map
