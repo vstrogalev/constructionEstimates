@@ -105,6 +105,7 @@ function Table(props: TableProps): ReactElement {
       estimatedProfit: 0,
       level: row.level + 1,
       parentId: row.id,
+      children: 0
     };
     setEditingRowValues(newRow);
     setEditingRowId(newRow.id);
