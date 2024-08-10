@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -14,7 +15,7 @@ const PATH_TEMPLATE_ENTRY = path.join(__dirname, "public", "index.html");
 const PATH_PUBLIC_FOLDER = path.join(__dirname, "public");
 const PATH_OUTPUT_FOLDER = path.join(__dirname, "build");
 
-const Dotenv = require('dotenv-webpack');
+const Dotenv = require("dotenv-webpack");
 
 module.exports = () => {
   const config = {
@@ -47,16 +48,26 @@ module.exports = () => {
           exclude: /node_modules/,
         },
         {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader",
+            options: {
+              plugins: ["react-refresh/babel"],
+            },
+          },
+        },
+        {
           test: /\.s?[ca]ss$/i,
           use: [
-            'style-loader',
+            "style-loader",
             {
-              loader: 'css-loader',
+              loader: "css-loader",
               options: {
                 modules: true,
               },
             },
-            'sass-loader',
+            "sass-loader",
           ],
         },
         {
@@ -66,6 +77,8 @@ module.exports = () => {
       ],
     },
     plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new ReactRefreshWebpackPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: PATH_TEMPLATE_ENTRY,
@@ -94,7 +107,7 @@ module.exports = () => {
           },
         ],
       }),
-      new Dotenv()
+      new Dotenv(),
     ],
   };
 
