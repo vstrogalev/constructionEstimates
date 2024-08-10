@@ -38796,7 +38796,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
 const REACT_APP_ENTITY_ID_API = '135123'; // ID, полученный по API {{baseUrl}}/v1/outlay-rows/entity/create
-const REACT_APP_CONSTRUCTION_COSTS_API_URL = 'https://185.244.172.108:8081/v1/outlay-rows/entity';
+const REACT_APP_CONSTRUCTION_COSTS_API_URL = 'http://185.244.172.108:8081/v1/outlay-rows/entity';
 
 
 const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
@@ -47340,7 +47340,7 @@ function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else i
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("ba18f7e06844d2e39415")
+/******/ 		__webpack_require__.h = () => ("2eb3d71e8160bc875e3a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -48534,4 +48534,4 @@ function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else i
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.ba18f7e0.js.map
+//# sourceMappingURL=main.2eb3d71e.js.map
