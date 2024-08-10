@@ -1,20 +1,31 @@
 .table {
+  position: relative;
   width: 100%;
   background-color: var(--color-bg-inner);
   font-size: 14px;
   line-height: 130%;
   padding-left: 10px;
   padding-right: 10px;
+  overflow: hidden; 
+}
+
+.table__container {
+  max-height: 84vh; 
+  overflow: auto; 
 }
 
 .table__content {
   width: 100%;
-  table-layout: fixed; /* Это поможет корректно обрабатывать ширину колонок */
+  table-layout: fixed; 
   border-collapse: collapse;
-  table-layout: fixed;
 }
 
 .table thead {
+  position: sticky;
+  top: 0;
+  height: 42px;
+  z-index: 10;
+  background-color: var(--color-bg-inner);
 }
 
 .table th,
@@ -33,11 +44,14 @@
 
 .table tr {
   display: grid;
-  height: 60px;
   grid-template-columns: 110px 1fr repeat(4, 200px);
   align-items: center;
   width: 100%; /* Убедимся, что строки занимают всю ширину таблицы */
   border-bottom: 1px solid var(--color-border);
+}
+
+tbody tr {
+  height: 60px;
 }
 
 .table__title {
@@ -46,6 +60,7 @@
   font-weight: 400;
   padding: 12px 14px;
   border-bottom: 1px solid var(--color-border);
+  height: 44px;
 }
 
 .table__input {
@@ -67,8 +82,8 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 12px;
-  cursor: url('../../assets/icons/cursor_hand.svg') 6 6, auto;
+  // padding-left: 10px;
+  cursor: url("../../assets/icons/cursor_hand.svg") 6 6, auto;
 }
 
 .table__nodeIcon {
@@ -108,4 +123,30 @@
 
 .table__node:hover .table__nodeIconDelete {
   display: block;
+}
+
+.table__line {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 1px solid rgb(198, 198, 198);
+}
+
+.table__line_connect {
+  width: 10px;
+  left: -2px;
+}
+
+.table__line_toChildren {
+  top: 38px;
+  left: 16px;
+}
+
+.table__line_toParent {
+  height: 40px;
+  bottom: 29px;
+  left: -4px;
+}
+
+.table__line_bottom {
 }

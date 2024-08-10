@@ -2,7 +2,7 @@ import {
   ConstructionData,
   ConstructionDataCreateRequest,
   ConstructionDataUpdateRequest,
-  ConstructionDataUpdatResponse,
+  ConstructionDataUpdateResponse,
   ConstructionRowRender,
 } from "./ConstructionTable.types";
 
@@ -28,7 +28,9 @@ export const getConstructionCostsListAPI = () =>
       return Promise.reject(data);
     });
 
-export const createConstructionCostAPI = async (createdRow: ConstructionRowRender) => {
+export const createConstructionCostAPI = async (
+  createdRow: ConstructionRowRender
+) => {
   const rowForCreate: ConstructionDataCreateRequest = {
     equipmentCosts: createdRow.equipmentCosts,
     estimatedProfit: createdRow.estimatedProfit,
@@ -40,24 +42,26 @@ export const createConstructionCostAPI = async (createdRow: ConstructionRowRende
     rowName: createdRow.rowName,
     salary: createdRow.salary,
     supportCosts: 0,
-    parentId: createdRow.parentId
+    parentId: createdRow.parentId,
   };
 
-  const res = await fetch(`${URL}/${ENTITY_ID_API}/row/${createdRow.id}/create`, {
-    method: 'POST',
+  const res = await fetch(`${URL}/${ENTITY_ID_API}/row/create`, {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json;charset=utf-8',
+      "Content-Type": "application/json;charset=utf-8",
     } as HeadersInit,
-    body: JSON.stringify(rowForCreate)
+    body: JSON.stringify(rowForCreate),
   });
 
-  const data = await checkResponse<ConstructionDataUpdatResponse>(res);
+  const data = await checkResponse<ConstructionDataUpdateResponse>(res);
 
   if (data.current) return data;
   return Promise.reject(data);
-}
+};
 
-export const updateConstructionCostAPI = async (updatedRow: ConstructionRowRender) => {
+export const updateConstructionCostAPI = async (
+  updatedRow: ConstructionRowRender
+) => {
   const rowForUpdate: ConstructionDataUpdateRequest = {
     equipmentCosts: updatedRow.equipmentCosts,
     estimatedProfit: updatedRow.estimatedProfit,
@@ -68,29 +72,37 @@ export const updateConstructionCostAPI = async (updatedRow: ConstructionRowRende
     overheads: updatedRow.overheads,
     rowName: updatedRow.rowName,
     salary: updatedRow.salary,
-    supportCosts: 0
+    supportCosts: 0,
   };
 
-  const res = await fetch(`${URL}/${ENTITY_ID_API}/row/${updatedRow.id}/update`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-    } as HeadersInit,
-    body: JSON.stringify(rowForUpdate)
-  });
+  const res = await fetch(
+    `${URL}/${ENTITY_ID_API}/row/${updatedRow.id}/update`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      } as HeadersInit,
+      body: JSON.stringify(rowForUpdate),
+    }
+  );
 
-  const data = await checkResponse<ConstructionDataUpdatResponse>(res);
+  const data = await checkResponse<ConstructionDataUpdateResponse>(res);
 
   if (data.changed) return data;
   return Promise.reject(data);
-}
+};
 
-export const deleteConstructionCostAPI = async (deletedRow: ConstructionRowRender) => {
-  const res = await fetch(`${URL}/${ENTITY_ID_API}/row/${deletedRow.id}/delete`, {
-    method: 'DELETE'
-  });
+export const deleteConstructionCostAPI = async (
+  deletedRow: ConstructionRowRender
+) => {
+  const res = await fetch(
+    `${URL}/${ENTITY_ID_API}/row/${deletedRow.id}/delete`,
+    {
+      method: "DELETE",
+    }
+  );
 
-  const data = await checkResponse<ConstructionDataUpdatResponse>(res);
+  const data = await checkResponse<ConstructionDataUpdateResponse>(res);
 
   return data;
-}
+};
