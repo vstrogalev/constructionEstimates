@@ -14,7 +14,7 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Set up Node.js
@@ -33,7 +33,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Check for changes
+        id: git_status
+        run: |
+          git config --global user.email "strogalev@hotmail.com"
+          git config --global user.name "vstrogalev"
+          git add .
+          git diff-index --quiet HEAD || echo "has_changes=true" >> $GITHUB_ENV
+      
       - name: Push the commit or tag
+        if: env.has_changes == 'true'
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
