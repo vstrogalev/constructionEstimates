@@ -1,3 +1,4 @@
+import { REACT_APP_CONSTRUCTION_COSTS_API_URL, REACT_APP_ENTITY_ID_API } from "../../common/_constants";
 import {
   ConstructionData,
   ConstructionDataCreateRequest,
@@ -6,8 +7,8 @@ import {
   ConstructionRowRender,
 } from "./ConstructionTable.types";
 
-const URL = process.env.REACT_APP_CONSTRUCTION_COSTS_API_URL;
-const ENTITY_ID_API = process.env.REACT_APP_ENTITY_ID_API;
+const URL = REACT_APP_CONSTRUCTION_COSTS_API_URL;
+const ENTITY_ID_API = REACT_APP_ENTITY_ID_API;
 
 if (!URL || !ENTITY_ID_API) {
   console.error("Environment variables are not defined properly:", {
