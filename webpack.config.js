@@ -6,16 +6,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const ReactRefreshTypeScript = require("react-refresh-typescript");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const IS_DEVELOPMENT = process.env.NODE_ENV !== "production";
-const IS_SERVE = process.env.WEBPACK_SERVE ?? false;
+const IS_SERVE = process.env.WEBPACK_SERVE || false;
 
 const PATH_ENTRY = path.join(__dirname, "src", "index.tsx");
 const PATH_TEMPLATE_ENTRY = path.join(__dirname, "public", "index.html");
 const PATH_PUBLIC_FOLDER = path.join(__dirname, "public");
 const PATH_OUTPUT_FOLDER = path.join(__dirname, "build");
-
-const Dotenv = require("dotenv-webpack");
 
 module.exports = () => {
   const config = {
